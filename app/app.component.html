@@ -1,0 +1,81 @@
+<!-- Left aligned menu below button -->
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+  <header class="mdl-layout__header">
+    <div class="mdl-layout__header-row">
+      <!-- Title -->
+      <span class="mdl-layout-title">Author: YC</span>
+     
+    </div>
+  </header>
+  <div class="mdl-layout__drawer">
+    <span class="mdl-layout-title">Menu</span>
+    <nav class="mdl-navigation">
+      <a class="mdl-navigation__link" href="www.github.com/yathishc">Author Page </a>
+    
+    </nav>
+  </div>
+  <main class="mdl-layout__content">
+    <div class="page-content">
+
+    
+     
+      
+      
+       
+   
+      <div class="mdl-grid">
+         <div class="mdl-cell mdl-cell--4-col ">
+                <h3> Built In Pipes</h3>
+                <hr>
+                <h4>Here my value is "welcome" in lowercase</h4>
+                 <p>But here i am using uppercase filter <br> Result --->{{myName|uppercase}}</p>                 
+                 <p> here i am using slice filter it had start and end but end is optional <br> Result ---> {{myName | slice:2:5 }}
+
+            </div>  
+       
+            <div class="mdl-cell mdl-cell--4-col">
+                  <h2> Custom Pipes</h2>
+                  <hr>
+                   <div class="mdl-textfield mdl-js-textfield">
+                    <input class="mdl-textfield__input" type="text" id="text1" #input (keyup)="0">
+                    <label class="mdl-textfield__label" for="text1">Name</label>
+                  </div>
+                
+                    <label>Type your name</label>
+                  <h3>{{input.value | double }}</h3>
+
+                  
+              </div>
+
+            <div class="mdl-cell mdl-cell--4-col ">
+                <h3> Filter Pipes</h3>
+                <hr>
+                 <div class="mdl-textfield mdl-js-textfield">
+                  <input class="mdl-textfield__input" type="text" id="text1" #new>
+                  <label class="mdl-textfield__label" for="text1">Value with A</label>
+                </div>
+                  
+                 <button (click)="values.push(new.value)">add</button>
+                 <ul *ngFor="let item of values | filters:'a' ">
+                  <li>{{item}}</li>
+                  </ul>
+
+                  <div class="event-card mdl-card mdl-shadow--2dp">
+                    <div class="mdl-card__title mdl-card--expand">
+                        <h6> Here if want to add some value into this array.Insert  value which holds
+                          atleast one 'a' inside it. ex: <strong> Mango </strong> 
+                         </h6>
+                    </div>
+                    
+                  </div>
+            </div>           
+      </div>
+      </div>
+  </main>
+  <footer class="mdl-mini-footer">
+    
+          <small>Special Thanks to Material Design Lite</small>   
+        <span> Author : YC </span>         
+  </footer>
+
+</div>
